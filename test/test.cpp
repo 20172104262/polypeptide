@@ -7,13 +7,13 @@ using namespace std;
 
 class Cfeet
 {
-private:
+protected:
 	int feet;
 	int inch;
 public:
 	int getfeet();
 	int getinch();
-	void display();
+	virtual void display();
 	int arithmetic(int a,int b);
 };
 int Cfeet::arithmetic(int a,int b)
@@ -21,7 +21,9 @@ int Cfeet::arithmetic(int a,int b)
 	feet = a;
 	inch = b;
 	inch = inch % 12;
-	feet = feet + inch % 12;
+	feet = feet + inch / 12;
+	return feet;
+	return inch;
 }
 void Cfeet::display()
 {
@@ -46,6 +48,11 @@ void Cmyfeet::display()
 }
 int main()
 {
-    return 0;
+	Cfeet *p;
+	p = new Cmyfeet;
+	p->arithmetic(3, 8);
+	p->display();
+	p->Cfeet::display();
+	return 0;
 }
 
