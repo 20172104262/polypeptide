@@ -48,8 +48,8 @@ void Cmyfeet::display()
 }
 int main()
 {
-	Cfeet *p;
-	p = new Cmyfeet;
+	Cfeet *p;        //Cmyfeet *p;
+	p = new Cmyfeet; //p = new Cmyfeet; 
 	p->arithmetic(3, 8);
 	p->display();
 	p->Cfeet::display();
